@@ -1,6 +1,7 @@
 # 🚀 Getting started with Strapi
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
+## Prerequisites
+This project runs on a postgres database. In order to start the project you have to have postgres on your computer, as well as a postgres database called 'strapi' running on port 5432.
 
 ### `develop`
 
