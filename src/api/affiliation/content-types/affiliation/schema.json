@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "affiliations",
+  "info": {
+    "singularName": "affiliation",
+    "pluralName": "affiliations",
+    "displayName": "Affiliation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Affiliation": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Authors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::author.author",
+      "mappedBy": "Affiliation"
+    }
+  }
+}

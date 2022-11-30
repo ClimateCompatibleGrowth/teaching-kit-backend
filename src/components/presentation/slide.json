@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_presentation_slides",
+  "info": {
+    "displayName": "Slide",
+    "icon": "chalkboard-teacher",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": false
+    },
+    "Content": {
+      "type": "richtext",
+      "required": true
+    },
+    "SpeakerNotes": {
+      "type": "richtext"
+    }
+  }
+}
