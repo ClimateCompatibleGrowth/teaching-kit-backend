@@ -17,7 +17,9 @@
     "pg": "8.6.0"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Frank Digital",
+    "email": "developer@frankdigital.se",
+    "url": "http://frankfam.co"
   },
   "strapi": {
     "uuid": "d23234f1-d042-415a-8fbe-cbad550467fd"
