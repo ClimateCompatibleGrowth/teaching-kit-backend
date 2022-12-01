@@ -29,17 +29,23 @@
       "target": "api::affiliation.affiliation",
       "inversedBy": "Authors"
     },
+    "Blocks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::block.block",
+      "mappedBy": "Authors"
+    },
     "Lectures": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::lecture.lecture",
-      "inversedBy": "Authors"
+      "mappedBy": "LectureCreator"
     },
     "Courses": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::course.course",
-      "mappedBy": "Authors"
+      "inversedBy": "CourseCreator"
     }
   }
 }

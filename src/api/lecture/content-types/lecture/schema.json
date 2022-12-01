@@ -24,17 +24,36 @@
     "Abstract": {
       "type": "richtext"
     },
-    "Authors": {
+    "LectureCreator": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::author.author",
-      "mappedBy": "Lectures"
+      "inversedBy": "Lectures"
     },
     "Courses": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::course.course",
       "mappedBy": "Lectures"
+    },
+    "Level": {
+      "type": "enumeration",
+      "enum": [
+        "Beginner",
+        "Intermediate",
+        "Expert"
+      ]
+    },
+    "LearningOutcomes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-the-material.learning-outcomes"
+    },
+    "Acknowledgement": {
+      "type": "text"
+    },
+    "CiteAs": {
+      "type": "text"
     }
   }
 }
