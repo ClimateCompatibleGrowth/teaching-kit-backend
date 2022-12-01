@@ -3,14 +3,47 @@
 ## Prerequisites
 This project runs on a postgres database. In order to start the project you have to have postgres on your computer, as well as a postgres database called 'strapi' running on port 5432.
 
+### Installing postgresql with Homebrew (osx)
+```
+brew install postgresql
+```
+
+### Start postgresql server Homebrew (osx)
+```
+brew services start postgresql # or "brew services run postgresql" to have it not restart at boot time
+```
+
+### Create a database named strapi
+```
+psql postgres
+CREATE DATABASE strapi;
+quit;
+```
+
+### Basic Database navigation  
+
+```
+\list # or \l list all databases
+\c <db name> # connect to a certain database
+\dt # list all tables in the current database using your search_path
+\dt *. # list all tables in the current database regardless your search_path
+```
+### Recommended Postgres UI
+```
+brew install --cask pgadmin4
+```
+
+## Environment variables
+Get environment variables from someone
+
+***
+
 ### `develop`
 
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
 
 ```
 npm run develop
-# or
-yarn develop
 ```
 
 ### `start`
