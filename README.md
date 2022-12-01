@@ -36,6 +36,17 @@ brew install --cask pgadmin4
 ## Environment variables
 Get environment variables from someone
 
+## Enable API in strapi
+
+```
+npm install
+npm run develop
+```
+
+Create an account - Ask someone for a datadump
+TODO: Will this add API permissions?
+
+
 ***
 
 ### `develop`
