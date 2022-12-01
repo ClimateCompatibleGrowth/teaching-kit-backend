@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blocks",
+  "info": {
+    "singularName": "block",
+    "pluralName": "blocks",
+    "displayName": "Block",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Document": {
+      "type": "richtext"
+    },
+    "Abstract": {
+      "type": "richtext"
+    },
+    "DurationInMinutes": {
+      "type": "integer",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "Level": {
+      "type": "enumeration",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "expert"
+      ],
+      "required": true
+    },
+    "Media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Lectures": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::lecture.lecture",
+      "mappedBy": "Blocks"
+    },
+    "Keywords": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::keyword.keyword",
+      "inversedBy": "Blocks"
+    },
+    "Slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "presentation.slide"
+    },
+    "References": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-the-material.reference"
+    },
+    "LearningOutcomes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-the-material.learning-outcomes"
+    }
+  }
+}

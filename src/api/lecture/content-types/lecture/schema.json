@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lectures",
+  "info": {
+    "singularName": "lecture",
+    "pluralName": "lectures",
+    "displayName": "Lecture",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Blocks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::block.block",
+      "inversedBy": "Lectures"
+    },
+    "Abstract": {
+      "type": "richtext"
+    },
+    "Authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::author.author",
+      "mappedBy": "Lectures"
+    },
+    "Courses": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course.course",
+      "mappedBy": "Lectures"
+    }
+  }
+}

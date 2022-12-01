@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_about_the_material_learning_outcomes",
+  "info": {
+    "displayName": "Learning outcome",
+    "icon": "brain",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "LearningOutcome": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
