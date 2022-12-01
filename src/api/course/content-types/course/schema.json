@@ -21,7 +21,7 @@
       "pluginOptions": {},
       "type": "richtext"
     },
-    "Authors": {
+    "CourseCreator": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::author.author",
@@ -37,6 +37,25 @@
       "type": "component",
       "repeatable": true,
       "component": "about-the-material.prerequisite"
+    },
+    "Acknowledgement": {
+      "type": "text"
+    },
+    "Level": {
+      "type": "enumeration",
+      "enum": [
+        "Beginner",
+        "Intermediate",
+        "Expert"
+      ]
+    },
+    "CiteAs": {
+      "type": "text"
+    },
+    "LearningOutcomes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-the-material.learning-outcomes"
     }
   }
 }
