@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_about_the_material_prerequisites",
+  "info": {
+    "displayName": "Prerequisite",
+    "icon": "list-ol"
+  },
+  "options": {},
+  "attributes": {
+    "Prerequisite": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
