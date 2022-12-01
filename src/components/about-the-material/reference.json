@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_acknowledgement_references",
+  "info": {
+    "displayName": "Reference",
+    "icon": "hands-helping",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "ORCID": {
+      "type": "string"
+    }
+  }
+}

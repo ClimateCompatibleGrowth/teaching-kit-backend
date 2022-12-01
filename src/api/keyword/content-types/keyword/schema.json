@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "keywords",
+  "info": {
+    "singularName": "keyword",
+    "pluralName": "keywords",
+    "displayName": "Keyword"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Keyword": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "Blocks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::block.block",
+      "mappedBy": "Keywords"
+    }
+  }
+}

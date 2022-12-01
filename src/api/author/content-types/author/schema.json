@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "authors",
+  "info": {
+    "singularName": "author",
+    "pluralName": "authors",
+    "displayName": "Author",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "type": "string"
+    },
+    "ORCID": {
+      "type": "string",
+      "required": false
+    },
+    "Affiliation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::affiliation.affiliation",
+      "inversedBy": "Authors"
+    },
+    "Lectures": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::lecture.lecture",
+      "inversedBy": "Authors"
+    },
+    "Courses": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course.course",
+      "mappedBy": "Authors"
+    }
+  }
+}
