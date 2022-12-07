@@ -1,53 +1,19 @@
-# 🚀 Getting started with Strapi
+# KTH Teaching kit
 
 ## Prerequisites
-This project runs on a postgres database. In order to start the project you have to have postgres on your computer, as well as a postgres database called 'strapi' running on port 5432.
 
-### Installing postgresql with Homebrew (osx)
-```
-brew install postgresql
-```
-
-### Start postgresql server Homebrew (osx)
-```
-brew services start postgresql # or "brew services run postgresql" to have it not restart at boot time
-```
-
-### Create a database named strapi
-```
-psql postgres
-CREATE DATABASE strapi;
-quit;
-```
-
-### Basic Database navigation  
-
-```
-\list # or \l list all databases
-\c <db name> # connect to a certain database
-\dt # list all tables in the current database using your search_path
-\dt *. # list all tables in the current database regardless your search_path
-```
-### Recommended Postgres UI
-```
-brew install --cask pgadmin4
-```
+This project runs on a postgres database. In order to start the project you have to have postgres on your computer, as well as a postgres database running on port 5432. See more info about how to set this up in `docs/database.md`
 
 ## Environment variables
-Get environment variables from someone
 
-## Enable API in strapi
+Create a file called `.env` (and make sure this file is in `.gitignore` so that it doesn't get pushed to github). The environment variable names should be present in `.env.example`. Get their corresponding values from someone familiar with the project.
 
-```
-npm install
-npm run develop
-```
+## Getting started
 
-Create an account - Ask someone for a datadump
-TODO: Will this add API permissions?
+Before getting started you should run `npm install`. Then use the commands specified below based on your needs.
+In order to have some starting data to your local environment, you could create a database dump like specified in `docs/database.md`, or ask someone familiar with the project if they can share a pre-existing dump with you.
 
-
-***
+---
 
 ### `develop`
 
@@ -63,8 +29,6 @@ Start your Strapi application with autoReload disabled. [Learn more](https://doc
 
 ```
 npm run start
-# or
-yarn start
 ```
 
 ### `build`
@@ -73,30 +37,8 @@ Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/lates
 
 ```
 npm run build
-# or
-yarn build
 ```
 
-## ⚙️ Deployment
+## Deployment
 
-Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://docs.strapi.io) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+The way the environment is setup at the time of writing (2022-12-02), there is only one deployed environment being present (which currently is a development environment, since this service hasn't been released yet). In order to deploy a new version of the app, you can follow the steps specified in `docs/ec2.md`
