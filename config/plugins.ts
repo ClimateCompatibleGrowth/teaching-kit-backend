@@ -1,6 +1,12 @@
-module.exports = ({ env }) =>
-  env('NODE_ENV') === 'production'
-    ? {
+module.exports = ({ env }) => {
+  const baseConfig = {
+    "content-versioning": {
+      enabled: true,
+    },
+  }
+  if (env('NODE_ENV') === 'production') {
+    return {
+      ...baseConfig,
       upload: {
         config: {
           provider: 'aws-s3',
@@ -18,6 +24,9 @@ module.exports = ({ env }) =>
             delete: {},
           },
         },
-      },
+      }
     }
-    : {}
+  }
+
+  return baseConfig;
+}

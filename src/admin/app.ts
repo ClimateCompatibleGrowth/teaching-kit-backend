@@ -29,6 +29,9 @@ export default {
       // 'zh',
     ],
   },
+  notifications: {
+    releases: false
+  },
   bootstrap(app) {
     console.log(app);
   },
