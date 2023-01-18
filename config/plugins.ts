@@ -1,6 +1,6 @@
 module.exports = ({ env }) => {
   const baseConfig = {
-    "content-versioning": {
+    'content-versioning': {
       enabled: true,
     },
   }
@@ -24,9 +24,9 @@ module.exports = ({ env }) => {
             delete: {},
           },
         },
-      }
+      },
     }
   }
 
-  return baseConfig;
+  return baseConfig
 }

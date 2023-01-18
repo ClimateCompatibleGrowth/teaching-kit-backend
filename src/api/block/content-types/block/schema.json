@@ -10,23 +10,31 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "versions": {
+      "versioned": true
+    }
+  },
   "attributes": {
     "Title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "Document": {
-      "type": "richtext"
+      "type": "richtext",
+      "pluginOptions": {}
     },
     "Abstract": {
-      "type": "richtext"
+      "type": "richtext",
+      "pluginOptions": {}
     },
     "DurationInMinutes": {
       "type": "integer",
       "required": true,
       "min": 0,
-      "default": 0
+      "default": 0,
+      "pluginOptions": {}
     },
     "Lectures": {
       "type": "relation",
@@ -43,12 +51,14 @@
     "Slides": {
       "type": "component",
       "repeatable": true,
-      "component": "presentation.slide"
+      "component": "presentation.slide",
+      "pluginOptions": {}
     },
     "LearningOutcomes": {
       "type": "component",
       "repeatable": true,
-      "component": "about-the-material.learning-outcomes"
+      "component": "about-the-material.learning-outcomes",
+      "pluginOptions": {}
     },
     "Authors": {
       "type": "relation",
@@ -57,7 +67,8 @@
       "inversedBy": "Blocks"
     },
     "References": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {}
     }
   }
 }
