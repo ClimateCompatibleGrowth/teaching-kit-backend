@@ -28,7 +28,7 @@
     "Abstract": {
       "type": "richtext"
     },
-    "LectureCreator": {
+    "LectureCreators": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::author.author",
