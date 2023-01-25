@@ -13,4 +13,4 @@ These are the steps in order to make a deploy:
 3. Make sure you are on the branch `main`, then `git pull`
 4. Go back to `~`
 5. Kill all PM2 processes by using `pm2 kill`
-6. Start the new instance by using `pm2 ecosystem.config.js` (the file name should exist in `~` and contain all environment variables).
+6. Start the new instance by using `pm2 start ecosystem.config.js` (the file name should exist in `~` and contain all environment variables).
