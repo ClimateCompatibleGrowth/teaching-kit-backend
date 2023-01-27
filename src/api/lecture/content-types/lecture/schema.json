@@ -40,14 +40,6 @@
       "target": "api::course.course",
       "mappedBy": "Lectures"
     },
-    "Level": {
-      "type": "enumeration",
-      "enum": [
-        "Beginner",
-        "Intermediate",
-        "Expert"
-      ]
-    },
     "LearningOutcomes": {
       "type": "component",
       "repeatable": true,
@@ -58,6 +50,12 @@
     },
     "CiteAs": {
       "type": "text"
+    },
+    "Level": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::level.level",
+      "inversedBy": "Lectures"
     }
   }
 }
