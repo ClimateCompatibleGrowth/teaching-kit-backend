@@ -39,13 +39,13 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::course.course",
-      "inversedBy": "CourseCreators"
+      "mappedBy": "CourseCreators"
     },
     "Lectures": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::lecture.lecture",
-      "inversedBy": "LectureCreators"
+      "mappedBy": "LectureCreators"
     }
   }
 }
