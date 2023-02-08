@@ -1,4 +1,4 @@
-# KTH Teaching kit
+# Teaching kit
 
 ## Prerequisites
 
