@@ -17,7 +17,7 @@ export default factories.createCoreController(
     async findByVuid(ctx) {
       try {
         const { vuid } = ctx.params
-        const { populate } = ctx.query
+        const { populate, locale } = ctx.query
 
         const entries: Block[] = await strapi.entityService.findMany(
           'api::block.block',
@@ -25,6 +25,7 @@ export default factories.createCoreController(
             filters: {
               vuid,
             },
+            locale: locale ?? 'en',
             populate,
           }
         )
