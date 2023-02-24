@@ -30,9 +30,9 @@ export default {
     ],
   },
   notifications: {
-    releases: false
+    releases: false,
   },
   bootstrap(app) {
-    console.log(app);
+    console.log(app)
   },
-};
+}
