@@ -12,7 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "FirstName": {
+      "type": "string",
+      "required": true
+    },
+    "LastName": {
       "type": "string",
       "required": true
     },
