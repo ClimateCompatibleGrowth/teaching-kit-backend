@@ -17,9 +17,13 @@ export default factories.createCoreController(
     async findByVuid(ctx) {
       try {
         const { vuid } = ctx.params
-        const { populate, locale } = ctx.query
+        const {
+          populate,
+          locale,
+          fallbackToDefaultLocale = 'false',
+        } = ctx.query
 
-        const entries: Block[] = await strapi.entityService.findMany(
+        let entries: Block[] = await strapi.entityService.findMany(
           'api::block.block',
           {
             filters: {
@@ -30,10 +34,17 @@ export default factories.createCoreController(
           }
         )
 
-        if (entries === undefined || entries.length === 0) {
-          ctx.status = 404
-          ctx.body = `Unable to find block with vuid ${vuid}`
-          return
+        if (
+          fallbackToDefaultLocale === 'true' &&
+          (entries === undefined || entries.length === 0)
+        ) {
+          entries = await strapi.entityService.findMany('api::block.block', {
+            filters: {
+              vuid,
+            },
+            locale: 'en',
+            populate,
+          })
         }
 
         const entry = entries.find(
@@ -41,8 +52,7 @@ export default factories.createCoreController(
         )
 
         if (entry === undefined) {
-          ctx.body = 404
-          ctx.body = `Unable to find a published block with vuid ${vuid}`
+          return notFound(ctx, vuid)
         }
 
         const sanitizedEntry = await this.sanitizeOutput(entry, ctx)
@@ -54,3 +64,8 @@ export default factories.createCoreController(
     },
   })
 )
+
+const notFound = (ctx, vuid: string) => {
+  ctx.status = 404
+  ctx.body = `Unable to find block with vuid ${vuid}`
+}
