@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_site_copy_dropdowns",
+  "info": {
+    "displayName": "Dropdown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string",
+      "required": true
+    },
+    "Placeholder": {
+      "type": "string",
+      "required": true
+    },
+    "AriaLabel": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
