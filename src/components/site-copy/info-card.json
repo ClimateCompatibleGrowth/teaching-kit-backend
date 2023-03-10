@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_site_copy_info_cards",
+  "info": {
+    "displayName": "InfoCard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Header": {
+      "type": "string",
+      "required": true
+    },
+    "Content": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
