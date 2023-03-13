@@ -34,9 +34,10 @@ The way the production environment is setup at the moment, the only machine that
 !NOTE! Triple-check that you are on your local environment when doing this, and not ssh:d into RDS.
 
 1. Enter `whoami`. This is only to make sure you are on your local machine. The output should be your user on your local machine (the username on the EC2 instance is more generic)
-2. Enter your local postgres database by running `psql <database-name`
+2. Enter your local postgres database by running `psql <database-name>`
 3. NOTE: the following will remove everything in your database. Make sure you won't miss anything in it. If you're sure; run `DROP SCHEMA public CASCADE;` followed by `CREATE SCHEMA public;`
-4. Run `psql <database-name> < <path-to-your-database-dump>`. This will populate the database according to your dump
+4. Exit out after creating a schema by running `\q`
+5. Run `psql <database-name> < <path-to-your-database-dump>`. This will populate the database according to your dump
 
 Note 1: You might get an sql error that "rdsadmin does not exist" in case you're running on a production dump. That's a role the aws rds creates for itself, but it shouldn't affect your local environment.
 
