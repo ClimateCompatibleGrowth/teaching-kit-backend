@@ -3,6 +3,19 @@ module.exports = ({ env }) => {
     'content-versioning': {
       enabled: true,
     },
+    deepl: {
+      apiKey: env('DEEPL_API_KEY'),
+      freeApi: true,
+      translatedFieldTypes: [
+        'string',
+        'text',
+        'richtext',
+        'component',
+        'dynamiczone',
+        'media',
+      ],
+      translateRelations: true,
+    },
   }
   if (env('NODE_ENV') === 'production') {
     return {

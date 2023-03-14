@@ -9,14 +9,29 @@
   "attributes": {
     "Title": {
       "type": "string",
-      "required": false
+      "required": false,
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     },
     "Content": {
       "type": "richtext",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     },
     "SpeakerNotes": {
-      "type": "richtext"
+      "type": "richtext",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     }
   }
 }

@@ -9,7 +9,12 @@
   "attributes": {
     "LearningOutcome": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     }
   }
 }

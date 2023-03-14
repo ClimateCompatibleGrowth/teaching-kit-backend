@@ -25,6 +25,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -33,6 +36,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -41,6 +47,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -59,12 +68,22 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::lecture.lecture",
+      "pluginOptions": {
+        "deepl": {
+          "translate": ""
+        }
+      },
       "mappedBy": "Blocks"
     },
     "Keywords": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::keyword.keyword",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      },
       "inversedBy": "Blocks"
     },
     "Slides": {
@@ -74,6 +93,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -84,6 +106,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -91,13 +116,21 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::author.author",
-      "inversedBy": "Blocks"
+      "inversedBy": "Blocks",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     },
     "References": {
       "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     }
