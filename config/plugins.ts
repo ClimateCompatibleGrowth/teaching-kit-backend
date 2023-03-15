@@ -3,10 +3,6 @@ module.exports = ({ env }) => {
     'content-versioning': {
       enabled: true,
     },
-    'vuid-field': {
-      enabled: true,
-      resolve: './src/plugins/vuid-field',
-    },
   }
   if (env('NODE_ENV') === 'production') {
     return {
