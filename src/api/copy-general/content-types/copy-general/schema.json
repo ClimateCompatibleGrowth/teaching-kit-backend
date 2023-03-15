@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "copy_generals",
+  "info": {
+    "singularName": "copy-general",
+    "pluralName": "copy-generals",
+    "displayName": "Copy - general",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "TranslationDoesNotExist": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    }
+  }
+}
