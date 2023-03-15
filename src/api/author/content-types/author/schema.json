@@ -12,16 +12,21 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "FirstName": {
+      "type": "string",
+      "required": true
+    },
+    "LastName": {
       "type": "string",
       "required": true
     },
     "Email": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "ORCID": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "Affiliation": {
       "type": "relation",

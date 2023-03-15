@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "copy_filter_pages",
+  "info": {
+    "singularName": "copy-filter-page",
+    "pluralName": "copy-filter-pages",
+    "displayName": "Copy - filter page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Header": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": false
+    },
+    "FilterHeader": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "KeywordDropdown": {
+      "displayName": "Dropdown",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "site-copy.dropdown",
+      "required": true
+    },
+    "AuthorDropdown": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "site-copy.dropdown"
+    },
+    "DefaultFilterResultHeader": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "FilterResultHeader": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    }
+  }
+}

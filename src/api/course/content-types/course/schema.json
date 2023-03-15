@@ -13,16 +13,27 @@
   "pluginOptions": {
     "versions": {
       "versioned": true
+    },
+    "i18n": {
+      "localized": true
     }
   },
   "attributes": {
     "Title": {
-      "pluginOptions": {},
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "type": "string",
       "required": true
     },
     "Abstract": {
-      "pluginOptions": {},
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "type": "richtext"
     },
     "CourseCreators": {
@@ -40,18 +51,38 @@
     "Prerequisites": {
       "type": "component",
       "repeatable": true,
-      "component": "about-the-material.prerequisite"
+      "component": "about-the-material.prerequisite",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Acknowledgement": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "CiteAs": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "LearningOutcomes": {
       "type": "component",
       "repeatable": true,
-      "component": "about-the-material.learning-outcomes"
+      "component": "about-the-material.learning-outcomes",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Level": {
       "type": "relation",

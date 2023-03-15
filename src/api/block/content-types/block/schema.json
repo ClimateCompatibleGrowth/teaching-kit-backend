@@ -13,28 +13,47 @@
   "pluginOptions": {
     "versions": {
       "versioned": true
+    },
+    "i18n": {
+      "localized": true
     }
   },
   "attributes": {
     "Title": {
       "type": "string",
       "required": true,
-      "pluginOptions": {}
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Document": {
       "type": "richtext",
-      "pluginOptions": {}
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Abstract": {
       "type": "richtext",
-      "pluginOptions": {}
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "DurationInMinutes": {
       "type": "integer",
       "required": true,
       "min": 0,
       "default": 0,
-      "pluginOptions": {}
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Lectures": {
       "type": "relation",
@@ -52,13 +71,21 @@
       "type": "component",
       "repeatable": true,
       "component": "presentation.slide",
-      "pluginOptions": {}
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "LearningOutcomes": {
       "type": "component",
       "repeatable": true,
       "component": "about-the-material.learning-outcomes",
-      "pluginOptions": {}
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Authors": {
       "type": "relation",
@@ -68,7 +95,11 @@
     },
     "References": {
       "type": "text",
-      "pluginOptions": {}
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
