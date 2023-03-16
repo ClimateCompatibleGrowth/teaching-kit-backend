@@ -4,22 +4,40 @@
   "info": {
     "singularName": "keyword",
     "pluralName": "keywords",
-    "displayName": "Keyword"
+    "displayName": "Keyword",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Keyword": {
       "type": "string",
       "unique": true,
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     },
     "Blocks": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::block.block",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      },
       "mappedBy": "Keywords"
     }
   }

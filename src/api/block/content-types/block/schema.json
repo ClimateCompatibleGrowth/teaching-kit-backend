@@ -68,22 +68,12 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::lecture.lecture",
-      "pluginOptions": {
-        "deepl": {
-          "translate": ""
-        }
-      },
       "mappedBy": "Blocks"
     },
     "Keywords": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::keyword.keyword",
-      "pluginOptions": {
-        "deepl": {
-          "translate": "translate"
-        }
-      },
       "inversedBy": "Blocks"
     },
     "Slides": {
@@ -116,12 +106,12 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::author.author",
-      "inversedBy": "Blocks",
       "pluginOptions": {
         "deepl": {
           "translate": "translate"
         }
-      }
+      },
+      "inversedBy": "Blocks"
     },
     "References": {
       "type": "text",
