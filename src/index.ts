@@ -26,12 +26,34 @@ export default {
    */
   async bootstrap({ strapi }) {
     await strapi.admin.services.permission.conditionProvider.register({
-      displayName: 'Is in creator list',
-      name: 'is-in-creator-list',
+      displayName: 'Is in author list',
+      name: 'is-in-author-list',
       plugin: 'admin',
       async handler(user: User) {
         return {
           Authors: { $elemMatch: { Email: user.email } },
+        }
+      },
+    })
+
+    await strapi.admin.services.permission.conditionProvider.register({
+      displayName: 'Is in lecture creator list',
+      name: 'is-in-lecture-creator-list',
+      plugin: 'admin',
+      async handler(user: User) {
+        return {
+          LectureCreators: { $elemMatch: { Email: user.email } },
+        }
+      },
+    })
+
+    await strapi.admin.services.permission.conditionProvider.register({
+      displayName: 'Is in course creator list',
+      name: 'is-in-course-creator-list',
+      plugin: 'admin',
+      async handler(user: User) {
+        return {
+          CourseCreators: { $elemMatch: { Email: user.email } },
         }
       },
     })
