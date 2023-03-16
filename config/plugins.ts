@@ -3,6 +3,10 @@ module.exports = ({ env }) => {
     'content-versioning': {
       enabled: true,
     },
+    'ccg-custom-ui-fields': {
+      enabled: true,
+      resolve: './src/plugins/ccg-custom-ui-fields',
+    },
   }
   if (env('NODE_ENV') === 'production') {
     return {
