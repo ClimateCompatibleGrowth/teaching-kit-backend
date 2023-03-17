@@ -4,7 +4,8 @@
   "info": {
     "singularName": "copy-block-page",
     "pluralName": "copy-block-pages",
-    "displayName": "Copy - block page"
+    "displayName": "Copy - block page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -78,18 +79,6 @@
       "type": "string",
       "required": true
     },
-    "IntermediateHeader": {
-      "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true
-    },
     "WasCreatedAt": {
       "pluginOptions": {
         "versions": {
@@ -102,6 +91,50 @@
       "type": "string"
     },
     "WasUpdatedAt": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        },
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "LearningOutcomes": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        },
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "Prerequisites": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        },
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "Acknowledgement": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        },
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "CiteAs": {
       "pluginOptions": {
         "versions": {
           "versioned": true

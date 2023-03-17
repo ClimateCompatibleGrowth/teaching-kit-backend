@@ -79,18 +79,6 @@
       "type": "string",
       "required": true
     },
-    "IntermediateHeader": {
-      "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true
-    },
     "WasCreatedAt": {
       "pluginOptions": {
         "versions": {
