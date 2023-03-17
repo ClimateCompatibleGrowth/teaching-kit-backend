@@ -23,6 +23,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -30,13 +33,23 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::course.course",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      },
       "mappedBy": "Level"
     },
     "Lectures": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::lecture.lecture",
-      "mappedBy": "Level"
+      "mappedBy": "Level",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     }
   }
 }

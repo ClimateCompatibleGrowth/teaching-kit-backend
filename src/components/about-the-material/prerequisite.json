@@ -2,13 +2,19 @@
   "collectionName": "components_about_the_material_prerequisites",
   "info": {
     "displayName": "Prerequisite",
-    "icon": "list-ol"
+    "icon": "list-ol",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Prerequisite": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     }
   }
 }

@@ -25,6 +25,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -33,6 +36,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -41,6 +47,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -74,6 +83,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -84,6 +96,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -91,6 +106,11 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::author.author",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      },
       "inversedBy": "Blocks"
     },
     "References": {
@@ -98,6 +118,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     }

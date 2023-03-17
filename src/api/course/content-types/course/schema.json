@@ -23,6 +23,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       },
       "type": "string",
@@ -32,6 +35,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       },
       "type": "richtext"
@@ -40,12 +46,22 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::author.author",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      },
       "inversedBy": "Courses"
     },
     "Lectures": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::lecture.lecture",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      },
       "inversedBy": "Courses"
     },
     "Prerequisites": {
@@ -55,6 +71,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -63,6 +82,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -71,6 +93,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "copy"
         }
       }
     },
@@ -81,6 +106,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },

@@ -24,6 +24,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -31,13 +34,21 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::block.block",
-      "inversedBy": "Lectures"
+      "inversedBy": "Lectures",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     },
     "Abstract": {
       "type": "richtext",
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -45,6 +56,11 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::author.author",
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      },
       "inversedBy": "Lectures"
     },
     "Courses": {
@@ -60,6 +76,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -68,6 +87,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       }
     },
@@ -76,6 +98,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "copy"
         }
       }
     },
