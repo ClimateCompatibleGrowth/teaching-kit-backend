@@ -3,7 +3,7 @@ import pluginPkg from '../../package.json'
 import pluginId from './pluginId'
 import Initializer from './components/Initializer'
 import PluginIcon from './components/PluginIcon'
-import VuidField from './components/VuidField'
+import CCGCustomFields from './components/CCGCustomFields/index'
 
 const name = pluginPkg.strapi.name
 
@@ -44,9 +44,10 @@ export default {
   bootstrap(app) {
     app.injectContentManagerComponent('editView', 'informations', {
       name: 'vuid-field',
-      Component: VuidField,
+      Component: CCGCustomFields,
     })
   },
+
   async registerTrads(app) {
     const { locales } = app
 
