@@ -20,6 +20,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       },
       "type": "string",
@@ -29,6 +32,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       },
       "type": "string"
@@ -40,6 +46,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       },
       "component": "site-copy.dropdown",
@@ -51,6 +60,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       },
       "component": "site-copy.dropdown"
@@ -59,6 +71,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       },
       "type": "string",
@@ -68,6 +83,9 @@
       "pluginOptions": {
         "i18n": {
           "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
         }
       },
       "type": "string",

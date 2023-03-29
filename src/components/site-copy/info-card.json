@@ -8,7 +8,12 @@
   "attributes": {
     "Header": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     },
     "Content": {
       "type": "text",

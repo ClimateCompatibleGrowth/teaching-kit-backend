@@ -8,21 +8,32 @@
   "attributes": {
     "Header": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     },
     "Content": {
       "type": "richtext",
-      "required": false
+      "required": false,
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     },
     "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

@@ -8,15 +8,30 @@
   "attributes": {
     "Label": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     },
     "Placeholder": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     },
     "AriaLabel": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     }
   }
 }
