@@ -82,43 +82,45 @@ const CCGCustomFields = () => {
           )}
         </div>
       ) : null}
-      <div
-        style={{
-          marginTop: '1rem',
-          display: 'flex',
-          justifyContent: 'space-between',
-          color: GRAY,
-          borderTop: `1px solid rgb(165, 165, 186, 0.5)`,
-          paddingTop: '1rem',
-          gap: '1rem',
-        }}
-      >
-        <Typography textColor="rgb(165, 165, 186)" fontWeight="bold">
-          Zenodo deposit
-        </Typography>
-        {zenodoEntry?.zenodo_deposit_id !== undefined &&
-        zenodoEntry?.zenodo_doi !== undefined ? (
-          <Typography textAlign="right">
-            <a
-              href={`https://zenodo.org/deposit/${zenodoEntry.zenodo_deposit_id}`}
-              target="_blank"
-            >
-              {zenodoEntry.zenodo_doi}
-            </a>
+      {dataIsLearningMaterial ? (
+        <div
+          style={{
+            marginTop: '1rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            color: GRAY,
+            borderTop: `1px solid rgb(165, 165, 186, 0.5)`,
+            paddingTop: '1rem',
+            gap: '1rem',
+          }}
+        >
+          <Typography textColor="rgb(165, 165, 186)" fontWeight="bold">
+            Zenodo deposit
           </Typography>
-        ) : (
-          <button
-            onClick={() =>
-              fetchDepositDatabaseEntry(
-                initialData?.vuid,
-                initialData?.versionNumber
-              )
-            }
-          >
-            {isLoading ? 'Loading...' : 'Check for Zenodo link'}
-          </button>
-        )}
-      </div>
+          {zenodoEntry?.zenodo_deposit_id !== undefined &&
+          zenodoEntry?.zenodo_doi !== undefined ? (
+            <Typography textAlign="right">
+              <a
+                href={`https://zenodo.org/deposit/${zenodoEntry.zenodo_deposit_id}`}
+                target="_blank"
+              >
+                {zenodoEntry.zenodo_doi}
+              </a>
+            </Typography>
+          ) : (
+            <button
+              onClick={() =>
+                fetchDepositDatabaseEntry(
+                  initialData?.vuid,
+                  initialData?.versionNumber
+                )
+              }
+            >
+              {isLoading ? 'Loading...' : 'Check for Zenodo link'}
+            </button>
+          )}
+        </div>
+      ) : null}
     </div>
   )
 }
