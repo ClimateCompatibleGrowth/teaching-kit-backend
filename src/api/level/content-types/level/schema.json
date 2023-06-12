@@ -44,12 +44,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::lecture.lecture",
-      "mappedBy": "Level",
       "pluginOptions": {
         "deepl": {
           "translate": "translate"
         }
-      }
+      },
+      "mappedBy": "Level"
     }
   }
 }
