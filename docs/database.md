@@ -41,4 +41,4 @@ The way the production environment is setup at the moment, the only machine that
 
 Note 1: You might get an sql error that "rdsadmin does not exist" in case you're running on a production dump. That's a role the aws rds creates for itself, but it shouldn't affect your local environment.
 
-Note 2: Your local logins will be reset with this as well, so you'll have to login with the credentials used for the production environment. If you login using the admin user (the only user which is currently used in the deployed environment), it would be good to immediately create a new user for you to use in your local environment. This is in order to not fool around too much with production credentials while developing locally.
+Note 2: Your local logins will be reset with this as well, so you'll have to login with the credentials used for the production environment. If you login using the admin user (the only user which is currently used in the deployed environment), it would be good to immediately create a new user for you to use in your local environment. This is in order to not fool around too much with production credentials while developing locally..
