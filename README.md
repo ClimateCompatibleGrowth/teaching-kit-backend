@@ -10,7 +10,19 @@ Create a file called `.env` (and make sure this file is in `.gitignore` so that 
 
 ## Getting started
 
-Before getting started you should run `npm install`. Then use the commands specified below based on your needs.
+Make sure you match node version with project:
+
+We are running on `lts/iron`.
+
+```
+nvm install lts/iron
+nvm use lts/iron
+node -v
+```
+
+Should list `v20.11.1`.
+
+Before getting started you should run `npm i`. Then use the commands specified below based on your needs.
 In order to have some starting data to your local environment, you could create a database dump like specified in `docs/database.md`, or ask someone familiar with the project if they can share a pre-existing dump with you.
 
 ---

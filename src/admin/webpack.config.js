@@ -4,9 +4,8 @@
 module.exports = (config, webpack) => {
   // Note: we provide webpack above so you should not `require` it
   // Perform customizations to webpack config
-
   config.plugins.push(
-    new webpack.EnvironmentPlugin([
+    new webpack.default.EnvironmentPlugin([
       'NODE_ENV',
       'GET_ZENODO_SECRET',
       'NEXT_ENDPOINT',
