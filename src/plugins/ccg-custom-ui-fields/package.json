@@ -2,15 +2,7 @@
   "name": "ccg-custom-ui-fields",
   "version": "0.0.0",
   "description": "A set of extra features developed to suit the specific needs of CCG (Climate Compatible Growth)",
-  "strapi": {
-    "name": "ccg-custom-ui-fields",
-    "description": "A set of extra features developed to suit the specific needs of CCG (Climate Compatible Growth)",
-    "kind": "plugin"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "typescript": "4.6.3"
-  },
+  "license": "MIT",
   "author": {
     "name": "A Strapi developer"
   },
@@ -19,13 +11,21 @@
       "name": "A Strapi developer"
     }
   ],
+  "scripts": {
+    "build": "tsc",
+    "develop": "tsc -w"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "4.6.3"
+  },
   "engines": {
-    "node": ">=14.19.1 <=18.x.x",
+    "node": ">=14.19.1 <=20.x.x",
     "npm": ">=6.0.0"
   },
-  "scripts": {
-    "develop": "tsc -w",
-    "build": "tsc"
-  },
-  "license": "MIT"
+  "strapi": {
+    "name": "ccg-custom-ui-fields",
+    "description": "A set of extra features developed to suit the specific needs of CCG (Climate Compatible Growth)",
+    "kind": "plugin"
+  }
 }

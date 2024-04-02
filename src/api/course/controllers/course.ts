@@ -5,10 +5,9 @@
 import { factories } from '@strapi/strapi'
 
 type Course = {
-  id: number
   vuid: string
   isVisibleInListView: boolean
-  publishedAt: null | string
+  publishedAt: Date | string
 }
 
 export default factories.createCoreController(
@@ -23,7 +22,7 @@ export default factories.createCoreController(
           fallbackToDefaultLocale = 'false',
         } = ctx.query
 
-        let entries: Course[] = await strapi.entityService.findMany(
+        let entries: Partial<Course>[] = await strapi.entityService.findMany(
           'api::course.course',
           {
             filters: {

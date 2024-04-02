@@ -114,3 +114,9 @@ dist
 build
 .strapi-updater.json
 .vscode/settings.json
+
+############################
+# Keypairs
+############################
+
+*.pem
