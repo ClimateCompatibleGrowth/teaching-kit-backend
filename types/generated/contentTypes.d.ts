@@ -680,6 +680,53 @@ export interface PluginContentReleasesReleaseAction
   }
 }
 
+export interface PluginI18NLocale extends Schema.CollectionType {
+  collectionName: 'i18n_locale'
+  info: {
+    singularName: 'locale'
+    pluralName: 'locales'
+    collectionName: 'locales'
+    displayName: 'Locale'
+    description: ''
+  }
+  options: {
+    draftAndPublish: false
+  }
+  pluginOptions: {
+    'content-manager': {
+      visible: false
+    }
+    'content-type-builder': {
+      visible: false
+    }
+  }
+  attributes: {
+    name: Attribute.String &
+      Attribute.SetMinMax<
+        {
+          min: 1
+          max: 50
+        },
+        number
+      >
+    code: Attribute.String & Attribute.Unique
+    createdAt: Attribute.DateTime
+    updatedAt: Attribute.DateTime
+    createdBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private
+    updatedBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private
+  }
+}
+
 export interface ApiAffiliationAffiliation extends Schema.CollectionType {
   collectionName: 'affiliations'
   info: {
@@ -784,7 +831,7 @@ export interface ApiBlockBlock extends Schema.CollectionType {
       versioned: true
     }
     i18n: {
-      localized: true
+      localized: false
     }
   }
   attributes: {
@@ -920,7 +967,7 @@ export interface ApiCopyBlockPageCopyBlockPage extends Schema.CollectionType {
   }
   pluginOptions: {
     i18n: {
-      localized: true
+      localized: false
     }
   }
   attributes: {
@@ -1091,7 +1138,7 @@ export interface ApiCopyCoursePageCopyCoursePage extends Schema.CollectionType {
   }
   pluginOptions: {
     i18n: {
-      localized: true
+      localized: false
     }
   }
   attributes: {
@@ -1216,7 +1263,7 @@ export interface ApiCopyFilterPageCopyFilterPage extends Schema.CollectionType {
   }
   pluginOptions: {
     i18n: {
-      localized: true
+      localized: false
     }
   }
   attributes: {
@@ -1307,7 +1354,7 @@ export interface ApiCopyGeneralCopyGeneral extends Schema.CollectionType {
   }
   pluginOptions: {
     i18n: {
-      localized: true
+      localized: false
     }
   }
   attributes: {
@@ -1352,7 +1399,7 @@ export interface ApiCopyLecturePageCopyLecturePage
   }
   pluginOptions: {
     i18n: {
-      localized: true
+      localized: false
     }
   }
   attributes: {
@@ -1537,7 +1584,7 @@ export interface ApiCourseCourse extends Schema.CollectionType {
       versioned: true
     }
     i18n: {
-      localized: true
+      localized: false
     }
   }
   attributes: {
@@ -1667,7 +1714,7 @@ export interface ApiKeywordKeyword extends Schema.CollectionType {
   }
   pluginOptions: {
     i18n: {
-      localized: true
+      localized: false
     }
   }
   attributes: {
@@ -1725,7 +1772,7 @@ export interface ApiLectureLecture extends Schema.CollectionType {
       versioned: true
     }
     i18n: {
-      localized: true
+      localized: false
     }
   }
   attributes: {
@@ -1847,7 +1894,7 @@ export interface ApiLevelLevel extends Schema.CollectionType {
   }
   pluginOptions: {
     i18n: {
-      localized: true
+      localized: false
     }
   }
   attributes: {
@@ -1913,7 +1960,7 @@ export interface ApiSiteCopySiteCopy extends Schema.CollectionType {
   }
   pluginOptions: {
     i18n: {
-      localized: true
+      localized: false
     }
   }
   attributes: {
@@ -2150,6 +2197,7 @@ declare module '@strapi/types' {
       'plugin::upload.folder': PluginUploadFolder
       'plugin::content-releases.release': PluginContentReleasesRelease
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction
+      'plugin::i18n.locale': PluginI18NLocale
       'api::affiliation.affiliation': ApiAffiliationAffiliation
       'api::author.author': ApiAuthorAuthor
       'api::block.block': ApiBlockBlock

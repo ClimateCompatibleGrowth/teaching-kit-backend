@@ -3,6 +3,7 @@
  * Any modifications made will be discarded.
  */
 import contentVersioning from "@notum-cz/strapi-plugin-content-versioning/strapi-admin";
+import i18N from "@strapi/plugin-i18n/strapi-admin";
 import ccgCustomUiFields from "../../src/plugins/ccg-custom-ui-fields/strapi-admin";
 import { renderAdmin } from "@strapi/strapi/admin";
 
@@ -13,6 +14,7 @@ renderAdmin(document.getElementById("strapi"), {
 
   plugins: {
     "content-versioning": contentVersioning,
+    i18n: i18N,
     "ccg-custom-ui-fields": ccgCustomUiFields,
   },
 });

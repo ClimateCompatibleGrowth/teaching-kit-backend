@@ -15,7 +15,7 @@
       "versioned": true
     },
     "i18n": {
-      "localized": true
+      "localized": false
     }
   },
   "attributes": {
