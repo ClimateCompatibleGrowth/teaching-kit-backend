@@ -117,6 +117,24 @@
       "relation": "manyToOne",
       "target": "api::level.level",
       "inversedBy": "Courses"
+    },
+    "Files": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     }
   }
 }
