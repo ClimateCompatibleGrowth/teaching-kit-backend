@@ -4,13 +4,6 @@
 
 import { factories } from '@strapi/strapi'
 
-type Block = {
-  id: number
-  vuid: string
-  isVisibleInListView: boolean
-  publishedAt: null | string
-}
-
 export default factories.createCoreController(
   'api::block.block',
   ({ strapi }) => ({
@@ -23,7 +16,7 @@ export default factories.createCoreController(
           fallbackToDefaultLocale = 'false',
         } = ctx.query
 
-        let entries: Block[] = await strapi.entityService.findMany(
+        let entries = await strapi.entityService.findMany(
           'api::block.block',
           {
             filters: {

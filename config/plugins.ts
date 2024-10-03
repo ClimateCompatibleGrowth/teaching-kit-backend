@@ -3,18 +3,22 @@ module.exports = ({ env }) => {
     'content-versioning': {
       enabled: true,
     },
-    deepl: {
-      apiKey: env('DEEPL_API_KEY'),
-      freeApi: true,
-      translatedFieldTypes: [
-        'string',
-        'text',
-        'richtext',
-        'component',
-        'dynamiczone',
-        'media',
-      ],
-      translateRelations: true,
+    translate: {
+      config: {
+        provider: "deepl",
+        providerOptions: {
+          apiKey: env('DEEPL_API_KEY'),
+        },
+        translatedFieldTypes: [
+          'string',
+          'text',
+          'richtext',
+          'component',
+          'dynamiczone',
+          'media',
+        ],
+        translateRelations: true,
+      },
     },
     'ccg-custom-ui-fields': {
       enabled: true,
