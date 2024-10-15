@@ -21,6 +21,7 @@ type Entry = {
 // For some reason, the entry you're at when browsing this plugin is automatically saved when you click the button to look for a new
 // Zenodo link. I really can't understand why this happens. If anyone is curious in the future, someone has hopefully answered this
 // forum post: https://forum.strapi.io/t/custom-plugin-entry-is-automatically-saved-when-performing-api-call/27079
+// Update: Seems to be an issue with content management panel not using the same API: https://github.com/strapi/strapi/issues/18214#issuecomment-1763159261
 const CCGCustomFields = () => {
   const [isLoading, setIsLoading] = React.useState(false)
   const [zenodoEntry, setZenodoEntry] = React.useState<Entry | undefined>(
@@ -98,7 +99,7 @@ const CCGCustomFields = () => {
             Zenodo deposit
           </Typography>
           {zenodoEntry?.zenodo_deposit_id !== undefined &&
-          zenodoEntry?.zenodo_doi !== undefined ? (
+            zenodoEntry?.zenodo_doi !== undefined ? (
             <Typography textAlign="right">
               <a
                 href={`https://zenodo.org/deposit/${zenodoEntry.zenodo_deposit_id}`}

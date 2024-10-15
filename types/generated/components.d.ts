@@ -73,36 +73,6 @@ export interface SiteCopyDropdown extends Schema.Component {
   }
 }
 
-export interface PresentationSlide extends Schema.Component {
-  collectionName: 'components_presentation_slides'
-  info: {
-    displayName: 'Slide'
-    icon: 'chalkboard-teacher'
-    description: ''
-  }
-  attributes: {
-    Title: Attribute.String &
-      Attribute.SetPluginOptions<{
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    Content: Attribute.RichText &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    SpeakerNotes: Attribute.RichText &
-      Attribute.SetPluginOptions<{
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-  }
-}
-
 export interface AboutTheMaterialReference extends Schema.Component {
   collectionName: 'components_acknowledgement_references'
   info: {
@@ -152,16 +122,46 @@ export interface AboutTheMaterialLearningOutcomes extends Schema.Component {
   }
 }
 
+export interface PresentationSlide extends Schema.Component {
+  collectionName: 'components_presentation_slides'
+  info: {
+    displayName: 'Slide'
+    icon: 'chalkboard-teacher'
+    description: ''
+  }
+  attributes: {
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    Content: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    SpeakerNotes: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+  }
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'site-copy.info-card': SiteCopyInfoCard
       'site-copy.info-card-large': SiteCopyInfoCardLarge
       'site-copy.dropdown': SiteCopyDropdown
-      'presentation.slide': PresentationSlide
       'about-the-material.reference': AboutTheMaterialReference
       'about-the-material.prerequisite': AboutTheMaterialPrerequisite
       'about-the-material.learning-outcomes': AboutTheMaterialLearningOutcomes
+      'presentation.slide': PresentationSlide
     }
   }
 }
