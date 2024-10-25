@@ -1362,6 +1362,32 @@ export interface ApiCopyCoursePageCopyCoursePage extends Schema.CollectionType {
     }
   }
   attributes: {
+    CiteAs: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    Acknowledgement: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
     DescriptionHeader: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1922,6 +1948,15 @@ export interface ApiCourseCourse extends Schema.CollectionType {
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    Logo: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false
         }
         deepl: {
           translate: 'translate'

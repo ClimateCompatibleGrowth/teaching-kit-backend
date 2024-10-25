@@ -135,6 +135,21 @@
           "translate": "translate"
         }
       }
+    },
+    "Logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        },
+        "deepl": {
+          "translate": "translate"
+        }
+      }
     }
   }
 }
