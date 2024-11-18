@@ -34,12 +34,6 @@
       "target": "api::affiliation.affiliation",
       "inversedBy": "Authors"
     },
-    "Blocks": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::block.block",
-      "mappedBy": "Authors"
-    },
     "Courses": {
       "type": "relation",
       "relation": "manyToMany",

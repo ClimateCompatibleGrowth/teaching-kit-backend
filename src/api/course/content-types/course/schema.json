@@ -112,12 +112,6 @@
         }
       }
     },
-    "Level": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::level.level",
-      "inversedBy": "Courses"
-    },
     "Files": {
       "allowedTypes": [
         "images",

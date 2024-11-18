@@ -30,17 +30,6 @@
         }
       }
     },
-    "Blocks": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::block.block",
-      "inversedBy": "Lectures",
-      "pluginOptions": {
-        "deepl": {
-          "translate": "translate"
-        }
-      }
-    },
     "Abstract": {
       "type": "richtext",
       "pluginOptions": {
@@ -103,12 +92,6 @@
           "translate": "copy"
         }
       }
-    },
-    "Level": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::level.level",
-      "inversedBy": "Lectures"
     },
     "Files": {
       "allowedTypes": [
