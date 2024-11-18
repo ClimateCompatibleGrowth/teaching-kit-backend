@@ -991,11 +991,6 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
       'manyToOne',
       'api::affiliation.affiliation'
     >
-    Blocks: Attribute.Relation<
-      'api::author.author',
-      'manyToMany',
-      'api::block.block'
-    >
     Courses: Attribute.Relation<
       'api::author.author',
       'manyToMany',
@@ -1020,151 +1015,6 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private
-  }
-}
-
-export interface ApiBlockBlock extends Schema.CollectionType {
-  collectionName: 'blocks'
-  info: {
-    singularName: 'block'
-    pluralName: 'blocks'
-    displayName: 'Block'
-    description: ''
-  }
-  options: {
-    draftAndPublish: true
-  }
-  pluginOptions: {
-    versions: {
-      versioned: true
-    }
-    i18n: {
-      localized: true
-    }
-  }
-  attributes: {
-    Title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    Document: Attribute.RichText &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    Abstract: Attribute.RichText &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    DurationInMinutes: Attribute.Integer &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true
-        }
-      }> &
-      Attribute.SetMinMax<
-        {
-          min: 0
-        },
-        number
-      > &
-      Attribute.DefaultTo<0>
-    Lectures: Attribute.Relation<
-      'api::block.block',
-      'manyToMany',
-      'api::lecture.lecture'
-    >
-    Keywords: Attribute.Relation<
-      'api::block.block',
-      'manyToMany',
-      'api::keyword.keyword'
-    >
-    Slides: Attribute.Component<'presentation.slide', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    LearningOutcomes: Attribute.Component<
-      'about-the-material.learning-outcomes',
-      true
-    > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    Authors: Attribute.Relation<
-      'api::block.block',
-      'manyToMany',
-      'api::author.author'
-    > &
-      Attribute.SetPluginOptions<{
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    References: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    publishedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-      'api::block.block',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private
-    updatedBy: Attribute.Relation<
-      'api::block.block',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private
-    versions: Attribute.Relation<
-      'api::block.block',
-      'manyToMany',
-      'api::block.block'
-    >
-    vuid: Attribute.String
-    versionNumber: Attribute.Integer & Attribute.DefaultTo<1>
-    versionComment: Attribute.String
-    isVisibleInListView: Attribute.Boolean & Attribute.DefaultTo<true>
-    localizations: Attribute.Relation<
-      'api::block.block',
-      'oneToMany',
-      'api::block.block'
-    >
-    locale: Attribute.String
   }
 }
 
@@ -1939,11 +1789,6 @@ export interface ApiCourseCourse extends Schema.CollectionType {
           translate: 'translate'
         }
       }>
-    Level: Attribute.Relation<
-      'api::course.course',
-      'manyToOne',
-      'api::level.level'
-    >
     Files: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2023,16 +1868,6 @@ export interface ApiKeywordKeyword extends Schema.CollectionType {
           translate: 'translate'
         }
       }>
-    Blocks: Attribute.Relation<
-      'api::keyword.keyword',
-      'manyToMany',
-      'api::block.block'
-    > &
-      Attribute.SetPluginOptions<{
-        deepl: {
-          translate: 'translate'
-        }
-      }>
     createdAt: Attribute.DateTime
     updatedAt: Attribute.DateTime
     createdBy: Attribute.Relation<
@@ -2081,16 +1916,6 @@ export interface ApiLectureLecture extends Schema.CollectionType {
         i18n: {
           localized: true
         }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    Blocks: Attribute.Relation<
-      'api::lecture.lecture',
-      'manyToMany',
-      'api::block.block'
-    > &
-      Attribute.SetPluginOptions<{
         deepl: {
           translate: 'translate'
         }
@@ -2149,11 +1974,6 @@ export interface ApiLectureLecture extends Schema.CollectionType {
           translate: 'copy'
         }
       }>
-    Level: Attribute.Relation<
-      'api::lecture.lecture',
-      'manyToOne',
-      'api::level.level'
-    >
     Files: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2191,78 +2011,6 @@ export interface ApiLectureLecture extends Schema.CollectionType {
       'api::lecture.lecture',
       'oneToMany',
       'api::lecture.lecture'
-    >
-    locale: Attribute.String
-  }
-}
-
-export interface ApiLevelLevel extends Schema.CollectionType {
-  collectionName: 'levels'
-  info: {
-    singularName: 'level'
-    pluralName: 'levels'
-    displayName: 'Level'
-    description: ''
-  }
-  options: {
-    draftAndPublish: true
-  }
-  pluginOptions: {
-    i18n: {
-      localized: true
-    }
-  }
-  attributes: {
-    Level: Attribute.String &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    Courses: Attribute.Relation<
-      'api::level.level',
-      'oneToMany',
-      'api::course.course'
-    > &
-      Attribute.SetPluginOptions<{
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    Lectures: Attribute.Relation<
-      'api::level.level',
-      'oneToMany',
-      'api::lecture.lecture'
-    > &
-      Attribute.SetPluginOptions<{
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    publishedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-      'api::level.level',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private
-    updatedBy: Attribute.Relation<
-      'api::level.level',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private
-    localizations: Attribute.Relation<
-      'api::level.level',
-      'oneToMany',
-      'api::level.level'
     >
     locale: Attribute.String
   }
@@ -2535,7 +2283,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser
       'api::affiliation.affiliation': ApiAffiliationAffiliation
       'api::author.author': ApiAuthorAuthor
-      'api::block.block': ApiBlockBlock
       'api::copy-block-page.copy-block-page': ApiCopyBlockPageCopyBlockPage
       'api::copy-course-page.copy-course-page': ApiCopyCoursePageCopyCoursePage
       'api::copy-filter-page.copy-filter-page': ApiCopyFilterPageCopyFilterPage
@@ -2544,7 +2291,6 @@ declare module '@strapi/types' {
       'api::course.course': ApiCourseCourse
       'api::keyword.keyword': ApiKeywordKeyword
       'api::lecture.lecture': ApiLectureLecture
-      'api::level.level': ApiLevelLevel
       'api::site-copy.site-copy': ApiSiteCopySiteCopy
       'admin::audit-log': AdminAuditLog
     }

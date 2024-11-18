@@ -28,17 +28,6 @@
           "translate": "translate"
         }
       }
-    },
-    "Blocks": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::block.block",
-      "pluginOptions": {
-        "deepl": {
-          "translate": "translate"
-        }
-      },
-      "mappedBy": "Keywords"
     }
   }
 }
