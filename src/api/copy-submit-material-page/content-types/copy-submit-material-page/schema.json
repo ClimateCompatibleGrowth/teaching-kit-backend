@@ -196,7 +196,7 @@
       "type": "string",
       "required": true
     },
-    "Prerequisites": {
+    "TermsAndConditions": {
       "pluginOptions": {
         "versions": {
           "versioned": true
@@ -208,7 +208,7 @@
           "translate": "translate"
         }
       },
-      "type": "string",
+      "type": "richtext",
       "required": true
     }
   }
