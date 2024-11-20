@@ -1,5 +1,54 @@
 import type { Schema, Attribute } from '@strapi/strapi'
 
+export interface AboutTheMaterialReference extends Schema.Component {
+  collectionName: 'components_acknowledgement_references'
+  info: {
+    displayName: 'Reference'
+    icon: 'hands-helping'
+    description: ''
+  }
+  attributes: {
+    Name: Attribute.String & Attribute.Required
+    ORCID: Attribute.String
+  }
+}
+
+export interface AboutTheMaterialPrerequisite extends Schema.Component {
+  collectionName: 'components_about_the_material_prerequisites'
+  info: {
+    displayName: 'Prerequisite'
+    icon: 'list-ol'
+    description: ''
+  }
+  attributes: {
+    Prerequisite: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+  }
+}
+
+export interface AboutTheMaterialLearningOutcomes extends Schema.Component {
+  collectionName: 'components_about_the_material_learning_outcomes'
+  info: {
+    displayName: 'Learning outcome'
+    icon: 'brain'
+    description: ''
+  }
+  attributes: {
+    LearningOutcome: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+  }
+}
+
 export interface SiteCopyInfoCard extends Schema.Component {
   collectionName: 'components_site_copy_info_cards'
   info: {
@@ -103,65 +152,16 @@ export interface PresentationSlide extends Schema.Component {
   }
 }
 
-export interface AboutTheMaterialReference extends Schema.Component {
-  collectionName: 'components_acknowledgement_references'
-  info: {
-    displayName: 'Reference'
-    icon: 'hands-helping'
-    description: ''
-  }
-  attributes: {
-    Name: Attribute.String & Attribute.Required
-    ORCID: Attribute.String
-  }
-}
-
-export interface AboutTheMaterialPrerequisite extends Schema.Component {
-  collectionName: 'components_about_the_material_prerequisites'
-  info: {
-    displayName: 'Prerequisite'
-    icon: 'list-ol'
-    description: ''
-  }
-  attributes: {
-    Prerequisite: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-  }
-}
-
-export interface AboutTheMaterialLearningOutcomes extends Schema.Component {
-  collectionName: 'components_about_the_material_learning_outcomes'
-  info: {
-    displayName: 'Learning outcome'
-    icon: 'brain'
-    description: ''
-  }
-  attributes: {
-    LearningOutcome: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-  }
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'about-the-material.reference': AboutTheMaterialReference
+      'about-the-material.prerequisite': AboutTheMaterialPrerequisite
+      'about-the-material.learning-outcomes': AboutTheMaterialLearningOutcomes
       'site-copy.info-card': SiteCopyInfoCard
       'site-copy.info-card-large': SiteCopyInfoCardLarge
       'site-copy.dropdown': SiteCopyDropdown
       'presentation.slide': PresentationSlide
-      'about-the-material.reference': AboutTheMaterialReference
-      'about-the-material.prerequisite': AboutTheMaterialPrerequisite
-      'about-the-material.learning-outcomes': AboutTheMaterialLearningOutcomes
     }
   }
 }

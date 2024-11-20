@@ -1018,183 +1018,6 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
   }
 }
 
-export interface ApiCopyBlockPageCopyBlockPage extends Schema.CollectionType {
-  collectionName: 'copy_block_pages'
-  info: {
-    singularName: 'copy-block-page'
-    pluralName: 'copy-block-pages'
-    displayName: 'Copy - block page'
-    description: ''
-  }
-  options: {
-    draftAndPublish: false
-  }
-  pluginOptions: {
-    i18n: {
-      localized: true
-    }
-  }
-  attributes: {
-    DescriptionHeader: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true
-        }
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    Authors: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true
-        }
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    DownloadContent: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true
-        }
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    PowerpointDownloadDescription: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true
-        }
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    DocxDownloadDescription: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true
-        }
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    WasCreatedAt: Attribute.String &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true
-        }
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    WasUpdatedAt: Attribute.String &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true
-        }
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    LearningOutcomes: Attribute.String &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true
-        }
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    Prerequisites: Attribute.String &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true
-        }
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    Acknowledgement: Attribute.String &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true
-        }
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    CiteAs: Attribute.String &
-      Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true
-        }
-        i18n: {
-          localized: true
-        }
-        deepl: {
-          translate: 'translate'
-        }
-      }>
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-      'api::copy-block-page.copy-block-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private
-    updatedBy: Attribute.Relation<
-      'api::copy-block-page.copy-block-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private
-    localizations: Attribute.Relation<
-      'api::copy-block-page.copy-block-page',
-      'oneToMany',
-      'api::copy-block-page.copy-block-page'
-    >
-    locale: Attribute.String
-  }
-}
-
 export interface ApiCopyCoursePageCopyCoursePage extends Schema.CollectionType {
   collectionName: 'copy_course_pages'
   info: {
@@ -1683,6 +1506,283 @@ export interface ApiCopyLecturePageCopyLecturePage
       'api::copy-lecture-page.copy-lecture-page',
       'oneToMany',
       'api::copy-lecture-page.copy-lecture-page'
+    >
+    locale: Attribute.String
+  }
+}
+
+export interface ApiCopySubmissionConfirmationPageCopySubmissionConfirmationPage
+  extends Schema.CollectionType {
+  collectionName: 'copy_submission-confirmation_pages'
+  info: {
+    singularName: 'copy-submission-confirmation-page'
+    pluralName: 'copy-submission-confirmation-pages'
+    displayName: 'Copy - submission confirmation page'
+    description: ''
+  }
+  options: {
+    draftAndPublish: false
+  }
+  pluginOptions: {
+    i18n: {
+      localized: true
+    }
+  }
+  attributes: {
+    Title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    Body: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    createdAt: Attribute.DateTime
+    updatedAt: Attribute.DateTime
+    createdBy: Attribute.Relation<
+      'api::copy-submission-confirmation-page.copy-submission-confirmation-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private
+    updatedBy: Attribute.Relation<
+      'api::copy-submission-confirmation-page.copy-submission-confirmation-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private
+    localizations: Attribute.Relation<
+      'api::copy-submission-confirmation-page.copy-submission-confirmation-page',
+      'oneToMany',
+      'api::copy-submission-confirmation-page.copy-submission-confirmation-page'
+    >
+    locale: Attribute.String
+  }
+}
+
+export interface ApiCopySubmitMaterialPageCopySubmitMaterialPage
+  extends Schema.CollectionType {
+  collectionName: 'copy_submit-material_pages'
+  info: {
+    singularName: 'copy-submit-material-page'
+    pluralName: 'copy-submit-material-pages'
+    displayName: 'Copy - submit material page'
+    description: ''
+  }
+  options: {
+    draftAndPublish: false
+  }
+  pluginOptions: {
+    i18n: {
+      localized: true
+    }
+  }
+  attributes: {
+    PageHeader: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    ContactEmail: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    ContentLanguage: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    CourseTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    CourseAbstract: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    CourseMaterials: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    LectureWrapper: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    LectureTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    LectureAbstract: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    LectureFiles: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    AddNewLecture: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    SubmitButton: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    Prerequisites: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        versions: {
+          versioned: true
+        }
+        i18n: {
+          localized: true
+        }
+        deepl: {
+          translate: 'translate'
+        }
+      }>
+    createdAt: Attribute.DateTime
+    updatedAt: Attribute.DateTime
+    createdBy: Attribute.Relation<
+      'api::copy-submit-material-page.copy-submit-material-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private
+    updatedBy: Attribute.Relation<
+      'api::copy-submit-material-page.copy-submit-material-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private
+    localizations: Attribute.Relation<
+      'api::copy-submit-material-page.copy-submit-material-page',
+      'oneToMany',
+      'api::copy-submit-material-page.copy-submit-material-page'
     >
     locale: Attribute.String
   }
@@ -2283,11 +2383,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser
       'api::affiliation.affiliation': ApiAffiliationAffiliation
       'api::author.author': ApiAuthorAuthor
-      'api::copy-block-page.copy-block-page': ApiCopyBlockPageCopyBlockPage
       'api::copy-course-page.copy-course-page': ApiCopyCoursePageCopyCoursePage
       'api::copy-filter-page.copy-filter-page': ApiCopyFilterPageCopyFilterPage
       'api::copy-general.copy-general': ApiCopyGeneralCopyGeneral
       'api::copy-lecture-page.copy-lecture-page': ApiCopyLecturePageCopyLecturePage
+      'api::copy-submission-confirmation-page.copy-submission-confirmation-page': ApiCopySubmissionConfirmationPageCopySubmissionConfirmationPage
+      'api::copy-submit-material-page.copy-submit-material-page': ApiCopySubmitMaterialPageCopySubmitMaterialPage
       'api::course.course': ApiCourseCourse
       'api::keyword.keyword': ApiKeywordKeyword
       'api::lecture.lecture': ApiLectureLecture

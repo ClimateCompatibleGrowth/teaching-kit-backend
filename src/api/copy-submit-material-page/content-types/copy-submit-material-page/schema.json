@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "copy_block_pages",
+  "collectionName": "copy_submit-material_pages",
   "info": {
-    "singularName": "copy-block-page",
-    "pluralName": "copy-block-pages",
-    "displayName": "Copy - block page",
+    "singularName": "copy-submit-material-page",
+    "pluralName": "copy-submit-material-pages",
+    "displayName": "Copy - submit material page",
     "description": ""
   },
   "options": {
@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "DescriptionHeader": {
+    "PageHeader": {
       "pluginOptions": {
         "versions": {
           "versioned": true
@@ -31,7 +31,7 @@
       "type": "string",
       "required": true
     },
-    "Authors": {
+    "ContactEmail": {
       "pluginOptions": {
         "versions": {
           "versioned": true
@@ -46,7 +46,7 @@
       "type": "string",
       "required": true
     },
-    "DownloadContent": {
+    "ContentLanguage": {
       "pluginOptions": {
         "versions": {
           "versioned": true
@@ -61,7 +61,7 @@
       "type": "string",
       "required": true
     },
-    "PowerpointDownloadDescription": {
+    "CourseTitle": {
       "pluginOptions": {
         "versions": {
           "versioned": true
@@ -76,7 +76,7 @@
       "type": "string",
       "required": true
     },
-    "DocxDownloadDescription": {
+    "CourseAbstract": {
       "pluginOptions": {
         "versions": {
           "versioned": true
@@ -91,7 +91,7 @@
       "type": "string",
       "required": true
     },
-    "WasCreatedAt": {
+    "CourseMaterials": {
       "pluginOptions": {
         "versions": {
           "versioned": true
@@ -103,9 +103,10 @@
           "translate": "translate"
         }
       },
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "WasUpdatedAt": {
+    "LectureWrapper": {
       "pluginOptions": {
         "versions": {
           "versioned": true
@@ -117,9 +118,10 @@
           "translate": "translate"
         }
       },
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "LearningOutcomes": {
+    "LectureTitle": {
       "pluginOptions": {
         "versions": {
           "versioned": true
@@ -131,7 +133,68 @@
           "translate": "translate"
         }
       },
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "LectureAbstract": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        },
+        "i18n": {
+          "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "LectureFiles": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        },
+        "i18n": {
+          "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "AddNewLecture": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        },
+        "i18n": {
+          "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "SubmitButton": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        },
+        "i18n": {
+          "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
+        }
+      },
+      "type": "string",
+      "required": true
     },
     "Prerequisites": {
       "pluginOptions": {
@@ -145,35 +208,8 @@
           "translate": "translate"
         }
       },
-      "type": "string"
-    },
-    "Acknowledgement": {
-      "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
-        "i18n": {
-          "localized": true
-        },
-        "deepl": {
-          "translate": "translate"
-        }
-      },
-      "type": "string"
-    },
-    "CiteAs": {
-      "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
-        "i18n": {
-          "localized": true
-        },
-        "deepl": {
-          "translate": "translate"
-        }
-      },
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "copy_submission-confirmation_pages",
+  "info": {
+    "singularName": "copy-submission-confirmation-page",
+    "pluralName": "copy-submission-confirmation-pages",
+    "displayName": "Copy - submission confirmation page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Title": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        },
+        "i18n": {
+          "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "Body": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        },
+        "i18n": {
+          "localized": true
+        },
+        "deepl": {
+          "translate": "translate"
+        }
+      },
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
