@@ -42,3 +42,6 @@ npm run build
 ## Deployment
 
 The way the environment is setup at the time of writing (2022-12-02), there is only one deployed environment being present (which currently is a development environment, since this service hasn't been released yet). In order to deploy a new version of the app, you can follow the steps specified in `docs/ec2.md`
+
+
+Test commit to test Github action
