@@ -37,6 +37,8 @@ module.exports = ({ env }) => {
             account: env('STORAGE_ACCOUNT'),
             accountKey: env('STORAGE_ACCOUNT_KEY'),
             containerName: env('STORAGE_CONTAINER_NAME'),
+            baseUrl: `https://${env('STORAGE_ACCOUNT')}.blob.core.windows.net/${env('STORAGE_CONTAINER_NAME')}`,
+            cdnBaseUrl: env('STORAGE_CDN_ENABLED') === 'true' ? env('STORAGE_CDN_URL') : undefined,
           },
         },
       },
