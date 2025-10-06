@@ -29,18 +29,19 @@ module.exports = ({ env }) => {
   if (env('NODE_ENV') === 'production') {
     return {
       ...baseConfig,
-      upload: {
-        config: {
-          provider: '@allyusd/strapi-provider-upload-azure-storage',
-          providerOptions: {
-            account: env('STORAGE_ACCOUNT'),
-            accountKey: env('STORAGE_ACCOUNT_KEY'),
-            serviceBaseURL: env('STORAGE_URL'),
-            containerName: env('STORAGE_CONTAINER_NAME'),
-            createContainerIfNotExist: false,
-          },
-        },
-      },
+      // Tillfälligt inaktiverad Azure upload - felsökning pågår
+      // upload: {
+      //   config: {
+      //     provider: '@allyusd/strapi-provider-upload-azure-storage',
+      //     providerOptions: {
+      //       account: env('STORAGE_ACCOUNT'),
+      //       accountKey: env('STORAGE_ACCOUNT_KEY'),
+      //       serviceBaseURL: env('STORAGE_URL'),
+      //       containerName: env('STORAGE_CONTAINER_NAME'),
+      //       createContainerIfNotExist: false,
+      //     },
+      //   },
+      // },
     }
   }
 
