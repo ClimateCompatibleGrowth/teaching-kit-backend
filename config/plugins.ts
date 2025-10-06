@@ -31,19 +31,13 @@ module.exports = ({ env }) => {
       ...baseConfig,
       upload: {
         config: {
-          provider: 'aws-s3',
+          provider: 'strapi-provider-upload-azure-storage',
           providerOptions: {
-            accessKeyId: env('AWS_ACCESS_KEY_ID'),
-            secretAccessKey: env('AWS_ACCESS_SECRET'),
-            region: env('AWS_REGION'),
-            params: {
-              Bucket: env('AWS_BUCKET_NAME'),
-            },
-          },
-          actionOptions: {
-            upload: {},
-            uploadStream: {},
-            delete: {},
+            account: env('STORAGE_ACCOUNT'),
+            accountKey: env('STORAGE_ACCOUNT_KEY'),
+            containerName: env('STORAGE_CONTAINER_NAME'),
+            defaultPath: 'assets',
+            maxConcurrent: 10,
           },
         },
       },
