@@ -31,13 +31,12 @@ module.exports = ({ env }) => {
       ...baseConfig,
       upload: {
         config: {
-          provider: '@allyusd/strapi-provider-upload-azure-storage',
+          provider: 'strapi-provider-upload-azure-sa',
           providerOptions: {
+            authType: 'default',
             account: env('STORAGE_ACCOUNT'),
             accountKey: env('STORAGE_ACCOUNT_KEY'),
-            // serviceBaseURL: env('STORAGE_URL'), // Ta bort denna - kan orsaka konflikter
             containerName: env('STORAGE_CONTAINER_NAME'),
-            createContainerIfNotExist: false,
           },
         },
       },
