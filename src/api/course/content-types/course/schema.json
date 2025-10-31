@@ -144,6 +144,16 @@
           "translate": "translate"
         }
       }
-    }
+      },
+      "SubmitterEmail": {
+        "type": "email",
+        "required": false,
+        "private": true,
+        "pluginOptions": {
+          "i18n": {
+            "localized": false
+          }
+        }
+      }
   }
 }

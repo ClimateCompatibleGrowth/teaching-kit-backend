@@ -8,9 +8,7 @@
     "kind": "plugin"
   },
   "dependencies": {},
-  "devDependencies": {
-    "typescript": "4.6.3"
-  },
+  "devDependencies": {},
   "author": {
     "name": "A Strapi developer"
   },
@@ -24,8 +22,11 @@
     "npm": ">=6.0.0"
   },
   "scripts": {
-    "develop": "tsc -w",
-    "build": "tsc"
+    "develop": "npx tsc -w",
+    "build": "npx tsc"
+  },
+  "peerDependencies": {
+    "typescript": ">=5.2 <6"
   },
   "license": "MIT"
 }

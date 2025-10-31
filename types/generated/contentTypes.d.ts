@@ -360,98 +360,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   }
 }
 
-export interface AdminWorkflow extends Schema.CollectionType {
-  collectionName: 'strapi_workflows'
-  info: {
-    name: 'Workflow'
-    description: ''
-    singularName: 'workflow'
-    pluralName: 'workflows'
-    displayName: 'Workflow'
-  }
-  pluginOptions: {
-    'content-manager': {
-      visible: false
-    }
-    'content-type-builder': {
-      visible: false
-    }
-  }
-  attributes: {
-    name: Attribute.String & Attribute.Required & Attribute.Unique
-    stages: Attribute.Relation<
-      'admin::workflow',
-      'oneToMany',
-      'admin::workflow-stage'
-    >
-    contentTypes: Attribute.JSON & Attribute.Required & Attribute.DefaultTo<[]>
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-      'admin::workflow',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private
-    updatedBy: Attribute.Relation<
-      'admin::workflow',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private
-  }
-}
-
-export interface AdminWorkflowStage extends Schema.CollectionType {
-  collectionName: 'strapi_workflows_stages'
-  info: {
-    name: 'Workflow Stage'
-    description: ''
-    singularName: 'workflow-stage'
-    pluralName: 'workflow-stages'
-    displayName: 'Stages'
-  }
-  options: {
-    version: '1.1.0'
-  }
-  pluginOptions: {
-    'content-manager': {
-      visible: false
-    }
-    'content-type-builder': {
-      visible: false
-    }
-  }
-  attributes: {
-    name: Attribute.String
-    color: Attribute.String & Attribute.DefaultTo<'#4945FF'>
-    workflow: Attribute.Relation<
-      'admin::workflow-stage',
-      'manyToOne',
-      'admin::workflow'
-    >
-    permissions: Attribute.Relation<
-      'admin::workflow-stage',
-      'manyToMany',
-      'admin::permission'
-    >
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-      'admin::workflow-stage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private
-    updatedBy: Attribute.Relation<
-      'admin::workflow-stage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private
-  }
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files'
   info: {
@@ -1752,7 +1660,7 @@ export interface ApiCopySubmitMaterialPageCopySubmitMaterialPage
           translate: 'translate'
         }
       }>
-    Prerequisites: Attribute.String &
+    TermsAndConditions: Attribute.RichText &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         versions: {
@@ -1905,6 +1813,13 @@ export interface ApiCourseCourse extends Schema.CollectionType {
         }
         deepl: {
           translate: 'translate'
+        }
+      }>
+    SubmitterEmail: Attribute.Email &
+      Attribute.Private &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false
         }
       }>
     createdAt: Attribute.DateTime
@@ -2319,47 +2234,6 @@ export interface ApiSiteCopySiteCopy extends Schema.CollectionType {
   }
 }
 
-export interface AdminAuditLog extends Schema.CollectionType {
-  collectionName: 'strapi_audit_logs'
-  info: {
-    singularName: 'audit-log'
-    pluralName: 'audit-logs'
-    displayName: 'Audit Log'
-  }
-  options: {
-    draftAndPublish: false
-    timestamps: false
-  }
-  pluginOptions: {
-    'content-manager': {
-      visible: false
-    }
-    'content-type-builder': {
-      visible: false
-    }
-  }
-  attributes: {
-    action: Attribute.String & Attribute.Required
-    date: Attribute.DateTime & Attribute.Required
-    user: Attribute.Relation<'admin::audit-log', 'oneToOne', 'admin::user'>
-    payload: Attribute.JSON
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-      'admin::audit-log',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private
-    updatedBy: Attribute.Relation<
-      'admin::audit-log',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private
-  }
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -2370,8 +2244,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission
       'admin::transfer-token': AdminTransferToken
       'admin::transfer-token-permission': AdminTransferTokenPermission
-      'admin::workflow': AdminWorkflow
-      'admin::workflow-stage': AdminWorkflowStage
       'plugin::upload.file': PluginUploadFile
       'plugin::upload.folder': PluginUploadFolder
       'plugin::content-releases.release': PluginContentReleasesRelease
@@ -2393,7 +2265,6 @@ declare module '@strapi/types' {
       'api::keyword.keyword': ApiKeywordKeyword
       'api::lecture.lecture': ApiLectureLecture
       'api::site-copy.site-copy': ApiSiteCopySiteCopy
-      'admin::audit-log': AdminAuditLog
     }
   }
 }

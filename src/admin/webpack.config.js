@@ -7,11 +7,10 @@ module.exports = (config) => {
   // Perform customizations to webpack config
 
   config.plugins.push(
-    new webpack.EnvironmentPlugin([
-      'NODE_ENV',
-      'GET_ZENODO_SECRET',
-      'NEXT_ENDPOINT',
-    ])
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: 'development',
+      NEXT_ENDPOINT: 'http://localhost:3000',
+    })
   )
 
   // Important: return the modified config
